@@ -16,10 +16,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
     private Button mButtonReset;
+    private Button mButtonChangeClock;
 
     private TextView mTextViewCountDown2;
     private Button mButtonStartPause2;
     private Button mButtonReset2;
+    private Button mButtonChangeClock2;
 
     private CountDownTimer mCountDownTimer;
     private CountDownTimer mCountDownTimer2;
@@ -43,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
         mButtonStartPause = findViewById(R.id.button_start_pause);
         mButtonStartPause = (Button) this.findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
+        mButtonChangeClock = findViewById(R.id.button_change_clock);
+
 
         mTextViewCountDown2 = findViewById(R.id.text_view_countdown2);
 
         mButtonStartPause2 = findViewById(R.id.button_start_pause2);
         mButtonReset2 = findViewById(R.id.button_reset2);
+        mButtonChangeClock2 = findViewById(R.id.button_change_clock2);
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +83,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mButtonChangeClock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (mTimerRunning) {
+                    TicTocVoice.pause();
+                    pauseTimer();
+                    TicTocVoice2.start();
+                    startTimer2();
+
+                }
+            }
+        });
+        mButtonChangeClock2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (mTimerRunning2) {
+                    TicTocVoice2.pause();
+                    pauseTimer2();
+                    TicTocVoice.start();
+                    startTimer();
+
+                }
+            }
+        });
+
         mButtonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         updateCountDownText2();
 
     }
+
+
 
     private void startTimer() {
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
