@@ -1,5 +1,6 @@
 package com.example.chess_clock;
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,10 +34,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        final MediaPlayer TicTocVoice = MediaPlayer.create(this, R.raw.tictac_voice);
+        final MediaPlayer TicTocVoice2 = MediaPlayer.create(this, R.raw.tictac_voice);
+        TicTocVoice.setLooping(true);
+        TicTocVoice2.setLooping(true);
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
 
         mButtonStartPause = findViewById(R.id.button_start_pause);
+        mButtonStartPause = (Button) this.findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
 
         mTextViewCountDown2 = findViewById(R.id.text_view_countdown2);
@@ -47,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TicTocVoice.start();
                 if (mTimerRunning) {
+                    TicTocVoice.pause();
                     pauseTimer();
+
                 } else {
+                    TicTocVoice.start();
                     startTimer();
                 }
             }
@@ -58,9 +67,12 @@ public class MainActivity extends AppCompatActivity {
         mButtonStartPause2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TicTocVoice2.start();
                 if (mTimerRunning2) {
+                    TicTocVoice2.pause();
                     pauseTimer2();
                 } else {
+                    TicTocVoice2.start();
                     startTimer2();
                 }
             }
@@ -132,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pauseTimer() {
+
         mCountDownTimer.cancel();
         mTimerRunning = false;
         mButtonStartPause.setText("Start");
