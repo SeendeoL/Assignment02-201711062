@@ -39,6 +39,7 @@
 
         <Button
             android:id="@+id/button_start_pause"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_countdown"
@@ -49,6 +50,7 @@
         <Button
             android:id="@+id/button_reset"
             android:layout_width="wrap_content"
+            android:backgroundTint="@android:color/holo_red_light"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_countdown"
             android:layout_marginStart="11dp"
@@ -60,6 +62,7 @@
 
         <Button
             android:id="@+id/button_change_clock"
+            android:backgroundTint="@android:color/holo_purple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_countdown"
@@ -67,6 +70,13 @@
             android:layout_marginTop="77dp"
             android:layout_toStartOf="@+id/button_start_pause"
             android:text="Change Clock" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/beyaz_sah"
+            android:layout_toRightOf="@id/text_view_countdown"
+            />
 
     </RelativeLayout>
 
@@ -97,6 +107,7 @@
 
         <Button
             android:id="@+id/button_start_pause2"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_countdown2"
@@ -106,6 +117,7 @@
 
         <Button
             android:id="@+id/button_reset2"
+            android:backgroundTint="@android:color/holo_red_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_countdown2"
@@ -119,6 +131,7 @@
             />
         <Button
             android:id="@+id/button_change_clock2"
+            android:backgroundTint="@android:color/holo_purple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_countdown2"
@@ -126,6 +139,12 @@
             android:layout_marginTop="77dp"
             android:layout_toStartOf="@+id/button_start_pause2"
             android:text="Change Clock" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/siyah_sah"
+            android:layout_toRightOf="@id/text_view_countdown2"
+            />
 
     </RelativeLayout>
 
