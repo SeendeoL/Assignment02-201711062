@@ -83,17 +83,17 @@
             android:background="@drawable/red_background"
 
             />
+
         <TextView
 
             android:id="@+id/text_view_countdown2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
             android:text="00:00"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_start_pause2"
